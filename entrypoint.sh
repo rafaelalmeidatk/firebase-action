@@ -27,6 +27,10 @@ echo "::group::My title"
 echo "Inside group"
 echo "::endgroup::"
 
-sh -c "firebase $*"
+out=$(sh -c "firebase $*" 2>&1)
 
-echo "after firebase command"
+echo "::group::Command output"
+echo $out
+echo "::endgroup::"
+
+echo "::set-output name=output::$out"
