@@ -17,3 +17,5 @@ COPY "entrypoint.sh" "/entrypoint.sh"
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["--help"]
+
+RUN echo "Test from Docker"

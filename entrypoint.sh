@@ -23,7 +23,9 @@ if [ -n "$PROJECT_ID" ]; then
     firebase use --add "$PROJECT_ID"
 fi
 
-echo "before firebase command"
+echo "::group::My title"
+echo "Inside group"
+echo "::endgroup::"
 
 sh -c "firebase $*"
 
