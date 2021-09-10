@@ -23,9 +23,10 @@ if [ -n "$PROJECT_ID" ]; then
     firebase use --add "$PROJECT_ID"
 fi
 
+echo "::group::Command output"
+
 out=$(sh -c "firebase $*" 2>&1)
 
-echo "::group::Command output"
 echo $out
 echo "::endgroup::"
 
