@@ -24,4 +24,4 @@ fi
 
 out=$(sh -c "firebase $*" 2>&1)
 echo $out
-echo "::set-output name=output::$out"
+echo "::set-output name=output::test"
