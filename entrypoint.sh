@@ -22,6 +22,6 @@ if [ -n "$PROJECT_ID" ]; then
 fi
 
 
-out=$(sh -c "firebase $*" 2>&1)
+out=$(sh -c "firebase $*" 2>&1 | xargs)
 echo $out
-echo "::set-output name=output::test"
+echo "::set-output name=output::$out"
