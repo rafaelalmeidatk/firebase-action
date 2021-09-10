@@ -1,7 +1,5 @@
 #!/bin/sh -l
 
-set -e
-
 if [ -z "$FIREBASE_TOKEN" ] && [ -z "$GCP_SA_KEY" ]; then
   echo "Either FIREBASE_TOKEN or GCP_SA_KEY is required to run commands with the firebase cli"
   exit 126
@@ -23,11 +21,7 @@ if [ -n "$PROJECT_ID" ]; then
     firebase use --add "$PROJECT_ID"
 fi
 
-echo "::group::Command output"
 
 out=$(sh -c "firebase $*" 2>&1)
-
 echo $out
-echo "::endgroup::"
-
 echo "::set-output name=output::$out"
